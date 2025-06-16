@@ -125,7 +125,7 @@ void main()
             if (alarm_time != 0)
             {
                 strcpy(&ALARM, "TIME  00:00:00");
-                sprintf(ALARM + 6, "%02d:%02d:%02d", (INT16U)alarm_time / 3600, (INT16U)alarm_time / 60 % 60, (INT16U)alarm_time % 60);
+                sprintf(ALARM + 6, "%02d:%02d:%02d", (INT16U)(alarm_time / 3600), (INT16U)(alarm_time / 60 % 60), (INT16U)(alarm_time % 60));
                 if (strcmp(ALARM, LCD_BUF) == 0)
                 {
                     buz_sound = 1;
@@ -146,7 +146,7 @@ void main()
             if (alarm_time >= 86400)
                 alarm_time = 0;
             strcpy(&LCD_BUF, "TIME  00:00:00");
-            sprintf(LCD_BUF + 6, "%02d:%02d:%02d", (INT16U)alarm_time / 3600, (INT16U)alarm_time / 60 % 60, (INT16U)alarm_time % 60);
+            sprintf(LCD_BUF + 6, "%02d:%02d:%02d", (INT16U)(alarm_time / 3600), (INT16U)(alarm_time / 60 % 60), (INT16U)(alarm_time % 60));
             LCD_ShowString(0, 0, "ALARMTIME");
             LCD_ShowString(1, 0, LCD_BUF);
             break;
@@ -175,7 +175,7 @@ void main()
                 timer_start = 0;
 
             LCD_ShowString(0, 0, "TIMER MODE"); // 显示模式指示
-            sprintf(LCD_BUF + 6, "%02d:%02d:%02d", (INT16U)timer_start / 3600, (INT16U)timer_start / 60 % 60, (INT16U)timer_start % 60);
+            sprintf(LCD_BUF + 6, "%02d:%02d:%02d", (INT16U)(timer_start / 3600), (INT16U)(timer_start / 60 % 60), (INT16U)(timer_start % 60));
             LCD_ShowString(1, 0, LCD_BUF); // 在第2行显示时间
             break;
         }
